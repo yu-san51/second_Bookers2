@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<!--infocreate-->
+		<div class="col-xs-9">
+			<h2>Book detail</h2>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td><%= link_to user_path(@book.user.id) do %>
+								<%= attachment_image_tag @book.user, :profile_image, size:"40x40", fallback: "no_image.jpg" %><br>
+								<%= @book.user.name %>
+							<% end %>
+						</td>
+						<td><%= link_to "#{@book.title}", book_path(@book.id) %></td>
+						<td><%= @book.opinion %></td>
+
+						<!--edit/destroy-->
+						<% if @book.user == current_user %>
+						<td><%= link_to "Edit", edit_book_path(@book.id), class:"btn-sm btn-success" %></td>
+						<td><%= link_to "Destroy", book_path_(@book.id), method: :delete, class:"btn-sm btn-danger", data_canfirm:"本当に削除しますか？" %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
