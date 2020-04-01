@@ -1,0 +1,32 @@
+
+<div class="container">
+
+	<div class="row">
+		<!--userinfo.create-->
+
+		<div class="col-xs-9">
+			<h2>Books</h2>
+			<table class="table table-hover table-inverse">
+				<% @books.each do |book| %>
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Opinion</th>
+							<th colspan="3"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><%= link_to user_path(book.user.id) do %>
+									<%= attachment_image_tag book.user, :profile_image, size:"40x40", fallback: "no_image.jpg" %>
+								<% end %>
+							</td>
+							<td><%= link_to "#{book.title}", book_path(book.id) %></td>
+							<td><%= book.body %></td>
+						</tr>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>  <!--row-->
+</div>

@@ -30,8 +30,8 @@
                 <% if user_signed_in? %>
                   <!--ログイン状態-->
 
-                  <li><%= link_to " Home", "#", class:"glyphicon glyphicon-home", aria_hidden:"true" %></li>
-                  <li><%= link_to " Users", "#", class:"glyphicon glyphicon-user", aria_hidden:"true" %></li>
+                  <li><%= link_to " Home", user_path(current_user.id), class:"glyphicon glyphicon-home", aria_hidden:"true" %></li>
+                  <li><%= link_to " Users", users_path, class:"glyphicon glyphicon-user", aria_hidden:"true" %></li>
                   <li><%= link_to " Books", "#", class: "glyphicon glyphicon-book", aria_hidden:"true" %></li>
                   <li><%= link_to " logout", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out", aria_hidden:"true" %></li>
 
