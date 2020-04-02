@@ -3,6 +3,7 @@
 	
 	<h2>User info</h2>
 	<%= form_for(@user) do |f| %>
+	<%= render 'layouts/error_messages', model: f.object %>
 
 		<div class="field">
 			<label for="inputname">Name</label>
